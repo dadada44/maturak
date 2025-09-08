@@ -101,6 +101,120 @@ header {
   margin-bottom: 25px;
 }
 
+ul{
+  list-style: none;   /* odstraní tečky */
+  padding-left: 0;    /* odstraní odsazení vlevo */
+  margin: 0;
+}
+
+/* General sections */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #000;
+}
+.section.alt {
+  background: #111;
+}
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #ffb347;
+}
+
+/* Intro */
+.intro-grid {
+  display: flex;
+  flex-direction: column; /* vše pod sebou */
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+
+.intro-left h2 {
+  font-size: 3rem;
+  color: #ffb347;
+  margin: auto;
+}
+
+/* blok nadpis + obrázek */
+.intro-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.intro-item h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.intro-item img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+
+
+
+
+
+.event {
+  background: rgba(255,255,255,0.05);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.ticket-price {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffb347;
+}
+
+/* Program */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+.program-card {
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.contact-info, .contact-social {
+  flex: 1 1 250px;
+}
+
+/* Teachers */
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+.teacher {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+
+
 /* Buttons */
 .btn {
   padding: 12px 25px;
