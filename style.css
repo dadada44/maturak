@@ -11,6 +11,10 @@ body {
   color: white;
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100svh;
+  display: grid;
+  margin: 0;
+  font: 1rem system-ui;
 }
 
 /* Container */
@@ -28,16 +32,10 @@ header {
   z-index: 1000;
 }
 
-
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: true;
-}
-
 img{
   max-width: 100%;
 }
+
 /* Hide radio buttons */
 input[type="radio"] {
     position: absolute;
@@ -49,15 +47,6 @@ input[type="radio"] {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
-}
-
-body{
-
-  min-height: 100svh;
-  display: grid;
-  place-content: center;
-  margin: 0;
-  font: 1rem system-ui;
 }
 
 .cards{
@@ -434,9 +423,35 @@ ul{
   justify-content: center;
   gap: 40px;
 }
-.contact-info, .contact-social {
-  flex: 1 1 250px;
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
 }
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222; /* dark circle background */
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons a:hover {
+  background: #ffb347; /* your orange highlight */
+  color: #000;
+  transform: scale(1.25);
+  box-shadow: 0 0px 15px rgba(255, 179, 71, 0.6);
+}
+
+
 
 /* Teachers */
 .teachers-grid {

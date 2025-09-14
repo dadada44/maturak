@@ -1,6 +1,3 @@
-
-
-// Smooth fade-in on scroll
 document.addEventListener("DOMContentLoaded", () => {
   const faders = document.querySelectorAll(".fade-in");
   const appearOptions = {
