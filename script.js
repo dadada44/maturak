@@ -95,3 +95,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Class toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const classToggle = document.querySelector('#class-toggle');
+    const switchSpan = document.querySelector('.switch');
+    const it4bContent = document.querySelector('.it4b-content');
+    const scbContent = document.querySelector('.scb-content');
+    if (classToggle && switchSpan && it4bContent && scbContent) {
+        classToggle.addEventListener('change', () => {
+            document.body.classList.toggle('scb-mode', classToggle.checked);
+            if (classToggle.checked) {
+                it4bContent.style.display = 'none';
+                scbContent.style.display = 'block';
+            } else {
+                it4bContent.style.display = 'block';
+                scbContent.style.display = 'none';
+            }
+        });
+        switchSpan.addEventListener('click', () => {
+            classToggle.checked = !classToggle.checked;
+            classToggle.dispatchEvent(new Event('change'));
+        });
+    }
+});
