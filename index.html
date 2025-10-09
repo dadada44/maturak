@@ -27,15 +27,14 @@
 
       <ul class="nav-links">
         <li><a href="#info">Info</a></li>
-        <li><a href="#timeline">Program</a></li>
         <li><a href="#students">Maturanti</a></li>
+        <li><a href="#timeline">Program</a></li>
         <li><a href="#tickets">Lístky</a></li>
         <li><a href="#contact">Kontakt</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
       <h1 class="fade-in" style="font-weight: bold;">Vítejte na maturitním plese IT4B a 4SCB</h1>
@@ -47,35 +46,6 @@
     </div>
   </section>
 
-
-
-  <section id="intro" style="background: #111;" class="section intro">
-    <div class="container intro-grid">
-      <div class="intro-left">
-        <h2 style="font-weight: bold;">Jsme</h2>
-      </div>
-
-      <div class="intro-item">
-        <h1>IT4B</h1>
-        <img src="images/trida.jpg" alt="IT4B">
-        <p class="class-desc">
-          SOUE – Střední odborné učiliště elektrotechnické.<br>
-          IT4B je třída zaměřená na programování, sítě a moderní technologie.
-        </p>
-      </div>
-
-      <div class="intro-item">
-        <h1>4SCB</h1>
-        <img src="images/trida.jpg" alt="4SCB">
-        <p class="class-desc">
-          SPSTR – Střední průmyslová škola strojnická.<br>
-          4SCB je třída technického zaměření s důrazem na praktické dovednosti.
-        </p>
-      </div>
-    </div>
-  </section>
-
-    <!-- Info Section -->
   <section id="info" class="section">
     <div class="container">
       <h2 style="font-weight: bold;">O plese</h2>
@@ -87,31 +57,254 @@
     </div>
   </section>
 
-    <!-- Events Section -->
-  <section id="tickets" class="section alt">
-    <div class="container">
-      <h2 style="font-weight: bold;">Cena lístku</h2>
-      <p class="ticket-price">Cena lístku: 300-350 Kč</p>
+  <section id="intro" style="background: #111;" class="section intro">
+    <div class="container intro-grid">
+      <div class="intro-left">
+        <h2 style="font-weight: bold;">Jsme</h2>
+      </div>
+
+      <div class="intro-item">
+        <h1>IT4B</h1>
+        <img src="images/DSC_0013.JPG" alt="IT4B">
+        <p class="class-desc">
+          SOUE – Střední odborné učiliště elektrotechnické.<br>
+          IT4B je třída zaměřená na programování, sítě a moderní technologie.
+        </p>
+      </div>
+
+      <div class="intro-item">
+        <h1>4SCB</h1>
+        <img src="images/DSC_0063.JPG" alt="4SCB">
+        <p class="class-desc">
+          SPSTR – Střední průmyslová škola strojnická.<br>
+          4SCB je třída technického zaměření s důrazem na praktické dovednosti.
+        </p>
+      </div>
     </div>
   </section>
 
+  <section id="students" class="section">
+  <div class="container">
+    <h1 style="padding-bottom: 100px; margin: 0; font-weight: bold;">Maturanti</h1>
+    <div id="cards-container" class="cards"></div>
+  </div>
+  </section>
+  <script>
+const students = [
+  { name: "Annie Bílá", img: "images/maturanti/DSC_0415.JPG", text: "Lorem ipsum..." },
+  { name: "Daniel Bock", img: "images/maturanti/DSC_0378.JPG", text: "Lorem ipsum..." },
+  { name: "Borislav Boyanov", img: "images/maturanti/DSC_0155.JPG", text: "Lorem ipsum..." },
+  { name: "Martin Brunclík", img: "images/maturanti/DSC_0197.JPG", text: "Lorem ipsum..." },
+  { name: "Natálie Burdová", img: "images/maturanti/DSC_0218.JPG", text: "Lorem ipsum..." },
+  { name: "Gabriel Čonka", img: "images/maturanti/DSC_0115.JPG", text: "Lorem ipsum..." },
+  { name: "Marat Fedorov", img: "images/maturanti/DSC_0108.JPG", text: "Lorem ipsum..." },
+  { name: "Vítek Fikrle", img: "images/maturanti/DSC_0447.JPG", text: "Lorem ipsum..." },
+  { name: "Ivan Gemela", img: "images/maturanti/DSC_0230.JPG", text: "Lorem ipsum..." },
+  { name: "Julie Heclová", img: "images/maturanti/DSC_0263.JPG", text: "Lorem ipsum..." },
+  { name: "Kristýna Herejková", img: "images/maturanti/DSC_0218.JPG", text: "Lorem ipsum..." },
+  { name: "Daniel Holý", img: "images/maturanti/DSC_0180.JPG", text: "Lorem ipsum..." },
+  { name: "Aneta Hřebíková", img: "images/maturanti/DSC_0245.JPG", text: "Lorem ipsum..." },
+  { name: "Anna Janková", img: "images/maturanti/DSC_0153.JPG", text: "Lorem ipsum..." },
+  { name: "Hana Kanalošová", img: "XXXX", text: "Lorem ipsum..." },
+  { name: "Alexander Kavnjanyk", img: "images/maturanti/DSC_0272.JPG", text: "Lorem ipsum..." },
+  { name: "Jan Kirpal", img: "images/maturanti/DSC_0246.JPG", text: "Lorem ipsum..." },
+  { name: "Jakub Kořínský", img: "images/maturanti/DSC_0345.JPG", text: "Lorem ipsum..." },
+  { name: "Daniel Koukolík", img: "images/maturanti/DSC_0236.JPG", text: "Lorem ipsum..." },
+  { name: "Adam Lavrikov", img: "XXXX", text: "Lorem ipsum..." },
+  { name: "David Lavička", img: "images/maturanti/DSC_0140.JPG", text: "Lorem ipsum..." },
+  { name: "Aneta Mrázová", img: "XXXX", text: "Lorem ipsum..." },
+  { name: "Eliška Novotná", img: "images/maturanti/DSC_0268.JPG", text: "Lorem ipsum..." },
+  { name: "Nguyen Cong Tien Dung", img: "images/maturanti/DSC_0323.JPG", text: "Lorem ipsum..." },
+  { name: "Nguyen Quang Truong", img: "images/maturanti/DSC_0397.JPG", text: "Lorem ipsum..." },
+  { name: "Šimon Opatrný", img: "images/maturanti/DSC_0303.JPG", text: "Lorem ipsum..." },
+  { name: "Linda Pfeiferová", img: "images/maturanti/DSC_0171.JPG", text: "Lorem ipsum..." },
+  { name: "Veronika Pivoňková", img: "images/maturanti/DSC_0143.JPG", text: "Lorem ipsum..." },
+  { name: "Adéla Prskavcová", img: "images/maturanti/DSC_0210.JPG", text: "Lorem ipsum..." },
+  { name: "Barbora Sedláková", img: "images/maturanti/DSC_0163.JPG", text: "Lorem ipsum..." },
+  { name: "Natálie Šedivcová", img: "images/maturanti/DSC_0296.JPG", text: "Lorem ipsum..." },
+  { name: "Julie Šambergrová", img: "images/maturanti/DSC_0178.JPG", text: "Lorem ipsum..." },
+  { name: "Eva Štědrá", img: "images/maturanti/DSC_0260.JPG", text: "Lorem ipsum..." },
+  { name: "David Šticha", img: "images/maturanti/DSC_0361.JPG", text: "Lorem ipsum..." },
+  { name: "Eva Šváchová", img: "images/maturanti/DSC_0213.JPG", text: "Lorem ipsum..." },
+  { name: "Daryna Toporovska", img: "images/maturanti/DSC_0128.JPG", text: "Lorem ipsum..." },
+  { name: "Vojtěch Vašmucius", img: "images/maturanti/DSC_0427.JPG", text: "Lorem ipsum..." },
+  { name: "Tobiáš Veverka", img: "images/maturanti/DSC_0287.JPG", text: "Lorem ipsum..." },
+  { name: "Jakub Vlček", img: "images/maturanti/DSC_0376.JPG", text: "Lorem ipsum..." },
+  { name: "Vaclav Vostatek", img: "images/maturanti/DSC_0241.JPG", text: "Lorem ipsum..." },
+  { name: "Daniel Zeman", img: "images/maturanti/DSC_0199.JPG", text: "Lorem ipsum..." }
+];
 
- <section id="map" class="section">
+
+let startX = 0;
+const cardsContainer = document.querySelector('.cards');
+cardsContainer.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+cardsContainer.addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].clientX - startX;
+  if (Math.abs(diff) > 50) {
+    const current = document.querySelector('input[name="radio-card"]:checked');
+    const currentIndex = [...document.querySelectorAll('input[name="radio-card"]')].indexOf(current);
+    const nextIndex = (currentIndex + (diff < 0 ? 1 : -1) + students.length) % students.length;
+    document.getElementById(`radio-${nextIndex + 1}`).checked = true;
+  }
+});
+
+
+
+const container = document.getElementById("cards-container");
+
+students.forEach((student, i) => {
+  const next = (i + 1) % students.length;
+  const prev = (i - 1 + students.length) % students.length;
+  
+  container.innerHTML += `
+    <input type="radio" id="radio-${i+1}" name="radio-card" ${i===0 ? "checked" : ""}>
+    <article class="card" style="--angle:${(Math.random()*40-20).toFixed(1)}deg">
+      <img class="card-img" src="${student.img}" alt="${student.name}">
+      <div class="card-data">
+        <span class="card-num">${i+1}/${students.length}</span>
+        <h2>${student.name}</h2>
+        <p>${student.text}</p>
+        <footer>
+          <label for="radio-${prev+1}" aria-label="Previous">&#10094;</label>
+          <label for="radio-${next+1}" aria-label="Next">&#10095;</label>
+        </footer>
+      </div>
+    </article>
+  `;
+});
+  </script>
+
+  <section id="teachers" class="section alt">
+    <div class="class-switch">
+      <label for="class-toggle">IT4B</label>
+      <input type="checkbox" id="class-toggle">
+      <span class="switch"></span>
+      <label for="class-toggle">4SCB</label>
+    </div>
+
+    <div class="it4b-content">
+      <div class="container">
+        <h2 style="font-weight: bold;">Učitelé IT4B</h2>
+        <div class="teachers-grid">
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Zedníková">
+            <h3>Ing. Lenka Zedníková</h3>
+            <p>Třídní učitelka</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Breit">
+            <h3>Mgr. Petr Breit</h3>
+            <p>Tvorba webových stránek</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Bezděka">
+            <h3>Mgr. Jan Bezděka, Ph.D.</h3>
+            <p>Počítačové sítě</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Kovářík">
+            <h3>Jakub Kovářík</h3>
+            <p>Algoritmizace a programování</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Kadlecová">
+            <h3>Mgr. Zuzana Kadlecová</h3>
+            <p>Anglický jazyk</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="">
+            <h3></h3>
+            <p>Anglický jazyk</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Zedníková">
+            <h3>Ing. Lenka Zedníková</h3>
+            <p>Aplikovaný software v praxi</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Schejbalová">
+            <h3>Mgr. Veronika Schejbalová</h3>
+            <p>Český jazyk a literatura</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Bláhová">
+            <h3>Mgr. Kateřina Bláhová</h3>
+            <p>Ekonomika</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Kůsová">
+            <h3>Mgr. Šárka Kůsová</h3>
+            <p>Matematika</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Zábrodský">
+            <h3>Ing. Martin Zábrodský</h3>
+            <p>Operační systémy</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Šilhánek">
+            <h3>Mgr. Michal Šilhánek</h3>
+            <p>Tělesná výchova</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Formánek">
+            <h3>Ing. Jiří Formánek</h3>
+            <p>Hardware</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Fialová">
+            <h3>Mgr. Jana Fialová</h3>
+            <p>Německý jazyk</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://picsum.photos/id/401/200/300" alt="Unknown">
+            <h3></h3>
+            <p>Ruský jazyk</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scb-content" style="display: none;">
+      <div class="container">
+      <h2 style="font-weight: bold;">Učitelé 4SCB</h2>
+
+      <div class="teachers-grid">
+
+        <!-- Teacher 3 -->
+        <div class="teacher-card">
+          <img src="https://picsum.photos/id/401/200/300" alt="Teacher 3">
+          <h3>PhDr. Alena Svobodová</h3>
+          <p>Český jazyk</p>
+        </div>
+
+        <!-- Teacher 4 -->
+        <div class="teacher-card">
+          <img src="https://picsum.photos/id/401/200/300" alt="Teacher 4">
+          <h3>RNDr. Karel Horák</h3>
+          <p>Matematika</p>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="map" class="section">
   <div class="container">
     <h2 style="text-align:center; margin-bottom:60px; font-weight:bold;">Kde se ples koná</h2>
     <p style="text-align:center; margin-bottom:15px; font-weight:bold;">U Borského parku 31, Plzeň</p>
     <div class="map-wrapper">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1289.7398717209387!2d13.370958599999993!3d49.72059549999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470aee137fc8c8ab%3A0xb68ed059455373cb!2sCongress%20Center%20Parkhotel%20Plze%C5%88!5e0!3m2!1suk!2scz!4v1760040361512!5m2!1suk!2scz"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4292.415510571248!2d13.3709586!3d49.7205955!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470aee137fc8c8ab%3A0xb68ed059455373cb!2sCongress%20Center%20Parkhotel%20Plze%C5%88!5e1!3m2!1scs!2scz!4v1760045385880!5m2!1scs!2scz"
         style="border:0; width:100%; height:400px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.15);"
         allowfullscreen=""
         loading="lazy">
       </iframe>
     </div>
   </div>
-</section>
-
-<style>
+  </section>
+  <style>
 #map {
   padding: 50px 15px;
   background: #000000;
@@ -133,11 +326,9 @@
   font-size: 1rem;
   color: #ffffff;
 }
-</style>
+  </style>
 
-
-
-<section id="timeline" class="section">
+  <section id="timeline" class="section alt">
     <h2>Časový harmonogram</h2>
     <div class="timeline">
       <div class="timeline-item left">
@@ -226,7 +417,6 @@
       </div>
     </div>
   </section>
-
   <style>
     .program-grid {
       display: grid;
@@ -275,168 +465,12 @@
     }
   </style>
 
-<section id="students" class="section">
-  <div class="container">
-    <h2 style="padding-bottom: 100px; margin: 0; font-weight: bold;">Maturanti</h2>
-    <div id="cards-container" class="cards"></div>
-  </div>
-</section>
-
-<script>
-const students = [
-  { name: "Alejandro Escamilla", img: "https://picsum.photos/id/21/200/300", text: "Lorem ipsum..." },
-  { name: "Shyamanta Baruah", img: "https://picsum.photos/id/30/200/300", text: "Lorem ipsum..." },
-  { name: "Luke Chesser", img: "https://picsum.photos/id/39/200/300", text: "Lorem ipsum..." },
-  { name: "Ilham Rahmansyah", img: "https://picsum.photos/id/103/200/300", text: "Lorem ipsum..." },
-  { name: "Petra Dr.", img: "https://picsum.photos/id/175/200/300", text: "Lorem ipsum..." },
-  { name: "Caleb George", img: "https://picsum.photos/id/349/200/300", text: "Lorem ipsum..." },
-  { name: "Austin Ban", img: "https://picsum.photos/id/401/200/300", text: "Lorem ipsum..." },
-  
-  //44 
-];
-
-
-let startX = 0;
-const cardsContainer = document.querySelector('.cards');
-cardsContainer.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-cardsContainer.addEventListener('touchend', e => {
-  const diff = e.changedTouches[0].clientX - startX;
-  if (Math.abs(diff) > 50) {
-    const current = document.querySelector('input[name="radio-card"]:checked');
-    const currentIndex = [...document.querySelectorAll('input[name="radio-card"]')].indexOf(current);
-    const nextIndex = (currentIndex + (diff < 0 ? 1 : -1) + students.length) % students.length;
-    document.getElementById(`radio-${nextIndex + 1}`).checked = true;
-  }
-});
-
-
-
-const container = document.getElementById("cards-container");
-
-students.forEach((student, i) => {
-  const next = (i + 1) % students.length;
-  const prev = (i - 1 + students.length) % students.length;
-  
-  container.innerHTML += `
-    <input type="radio" id="radio-${i+1}" name="radio-card" ${i===0 ? "checked" : ""}>
-    <article class="card" style="--angle:${(Math.random()*40-20).toFixed(1)}deg">
-      <img class="card-img" src="${student.img}" alt="${student.name}">
-      <div class="card-data">
-        <span class="card-num">${i+1}/${students.length}</span>
-        <h2>${student.name}</h2>
-        <p>${student.text}</p>
-        <footer>
-          <label for="radio-${prev+1}" aria-label="Previous">&#10094;</label>
-          <label for="radio-${next+1}" aria-label="Next">&#10095;</label>
-        </footer>
-      </div>
-    </article>
-  `;
-});
-</script>
-
-
-
-  <section id="teachers" class="section">
-    <div class="class-switch">
-      <label for="class-toggle">IT4B</label>
-      <input type="checkbox" id="class-toggle">
-      <span class="switch"></span>
-      <label for="class-toggle">4SCB</label>
-    </div>
-
-    <div class="it4b-content">
-      <div class="container">
-        <h2 style="font-weight: bold;">Učitelé IT4B</h2>
-
-        <div class="teachers-grid">
-
-          <!-- Teacher 1 -->
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Teacher 1">
-            <h3>Mgr. Jana Nováková</h3>
-            <p>Třídní učitelka</p>
-          </div>
-
-          <!-- Teacher 2 -->
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Teacher 2">
-            <h3>Ing. Petr Dvořák</h3>
-            <p>Programování</p>
-          </div>
-
-                    <!-- Teacher 2 -->
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Teacher 2">
-            <h3>Ing. Petr Pavel</h3>
-            <p>Prezidenctví</p>
-          </div>
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Teacher 2">
-            <h3>Ing. Petr Pavel</h3>
-            <p>Prezidenctví</p>
-          </div>
-
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Teacher 2">
-            <h3>Ing. Petr Pavel</h3>
-            <p>Prezidenctví</p>
-          </div>
-
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Teacher 2">
-            <h3>Ing. Petr Pavel</h3>
-            <p>Prezidenctví</p>
-          </div>
-
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Teacher 2">
-            <h3>Ing. Petr Pavel</h3>
-            <p>Prezidenctví</p>
-          </div>
-
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Teacher 2">
-            <h3>Ing. Petr Pavel</h3>
-            <p>Prezidenctví</p>
-          </div>
-
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Teacher 2">
-            <h3>Ing. Petr Pavel</h3>
-            <p>Prezidenctví</p>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-
-    <div class="scb-content" style="display: none;">
-      <div class="container">
-      <h2 style="font-weight: bold;">Učitelé 4SCB</h2>
-
-      <div class="teachers-grid">
-
-        <!-- Teacher 3 -->
-        <div class="teacher-card">
-          <img src="https://picsum.photos/id/401/200/300" alt="Teacher 3">
-          <h3>PhDr. Alena Svobodová</h3>
-          <p>Český jazyk</p>
-        </div>
-
-        <!-- Teacher 4 -->
-        <div class="teacher-card">
-          <img src="https://picsum.photos/id/401/200/300" alt="Teacher 4">
-          <h3>RNDr. Karel Horák</h3>
-          <p>Matematika</p>
-        </div>
-
-      </div>
-    </div>
+  <section id="tickets" class="section">
+    <div class="container">
+      <h2 style="font-weight: bold;">Cena lístku</h2>
+      <p class="ticket-price">Cena lístku: 300-350 Kč</p>
     </div>
   </section>
-
 
   <section id="video" class="section alt">
     <div class="container">
@@ -448,8 +482,7 @@ students.forEach((student, i) => {
     </div>
   </section>
 
-
-<section id="contact" class="section alt">
+  <section id="contact" class="section">
   <div class="container">
     <h2 style="font-weight: bold; text-align:center;">Kontakt</h2>
     <div class="contact-grid">
@@ -474,9 +507,8 @@ students.forEach((student, i) => {
 
     </div>
   </div>
-</section>
-
-<style>
+  </section>
+  <style>
 #contact {
   padding: 60px 20px;
   background: #000;
@@ -539,9 +571,7 @@ students.forEach((student, i) => {
     font-size: 1rem;
   }
 }
-</style>
-
-
+  </style>
 
   <footer>
     <p style="font-weight: bold;">© 2025 Maturitní Ples IT4B / 4SCB</p>
