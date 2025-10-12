@@ -245,7 +245,8 @@ input:checked + .card{
 }
 .card-data > footer{
   display: flex;
-  justify-content: var(--cards-footer-justify);
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 .card-data > footer label{
