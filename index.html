@@ -89,51 +89,55 @@
     <div id="cards-container" class="cards"></div>
   </div>
   </section>
+  <style>
+.card-img {
+  transform: rotate(-90deg);
+}
+  </style>
   <script>
 const students = [
-  { name: "Annie Bílá", img: "images/maturanti/DSC_0415.JPG", text: "Lorem ipsum..." },
-  { name: "Daniel Bock", img: "images/maturanti/DSC_0378.JPG", text: "Lorem ipsum..." },
-  { name: "Borislav Boyanov", img: "images/maturanti/DSC_0155.JPG", text: "Lorem ipsum..." },
-  { name: "Martin Brunclík", img: "images/maturanti/DSC_0197.JPG", text: "Lorem ipsum..." },
-  { name: "Natálie Burdová", img: "images/maturanti/DSC_0218.JPG", text: "Lorem ipsum..." },
-  { name: "Gabriel Čonka", img: "images/maturanti/DSC_0115.JPG", text: "Lorem ipsum..." },
-  { name: "Marat Fedorov", img: "images/maturanti/DSC_0108.JPG", text: "Lorem ipsum..." },
-  { name: "Vítek Fikrle", img: "images/maturanti/DSC_0447.JPG", text: "Lorem ipsum..." },
-  { name: "Ivan Gemela", img: "images/maturanti/DSC_0230.JPG", text: "Lorem ipsum..." },
-  { name: "Julie Heclová", img: "images/maturanti/DSC_0263.JPG", text: "Lorem ipsum..." },
-  { name: "Kristýna Herejková", img: "images/maturanti/DSC_0218.JPG", text: "Lorem ipsum..." },
-  { name: "Daniel Holý", img: "images/maturanti/DSC_0180.JPG", text: "Lorem ipsum..." },
-  { name: "Aneta Hřebíková", img: "images/maturanti/DSC_0245.JPG", text: "Lorem ipsum..." },
-  { name: "Anna Janková", img: "images/maturanti/DSC_0153.JPG", text: "Lorem ipsum..." },
-  { name: "Hana Kanalošová", img: "XXXX", text: "Lorem ipsum..." },
-  { name: "Alexander Kavnjanyk", img: "images/maturanti/DSC_0272.JPG", text: "Lorem ipsum..." },
-  { name: "Jan Kirpal", img: "images/maturanti/DSC_0246.JPG", text: "Lorem ipsum..." },
-  { name: "Jakub Kořínský", img: "images/maturanti/DSC_0345.JPG", text: "Lorem ipsum..." },
-  { name: "Daniel Koukolík", img: "images/maturanti/DSC_0236.JPG", text: "Lorem ipsum..." },
-  { name: "Adam Lavrikov", img: "XXXX", text: "Lorem ipsum..." },
-  { name: "David Lavička", img: "images/maturanti/DSC_0140.JPG", text: "Lorem ipsum..." },
-  { name: "Aneta Mrázová", img: "XXXX", text: "Lorem ipsum..." },
-  { name: "Eliška Novotná", img: "images/maturanti/DSC_0268.JPG", text: "Lorem ipsum..." },
-  { name: "Nguyen Cong Tien Dung", img: "images/maturanti/DSC_0323.JPG", text: "Lorem ipsum..." },
-  { name: "Nguyen Quang Truong", img: "images/maturanti/DSC_0397.JPG", text: "Lorem ipsum..." },
-  { name: "Šimon Opatrný", img: "images/maturanti/DSC_0303.JPG", text: "Lorem ipsum..." },
-  { name: "Linda Pfeiferová", img: "images/maturanti/DSC_0171.JPG", text: "Lorem ipsum..." },
-  { name: "Veronika Pivoňková", img: "images/maturanti/DSC_0143.JPG", text: "Lorem ipsum..." },
-  { name: "Adéla Prskavcová", img: "images/maturanti/DSC_0210.JPG", text: "Lorem ipsum..." },
-  { name: "Barbora Sedláková", img: "images/maturanti/DSC_0163.JPG", text: "Lorem ipsum..." },
-  { name: "Natálie Šedivcová", img: "images/maturanti/DSC_0296.JPG", text: "Lorem ipsum..." },
-  { name: "Julie Šambergrová", img: "images/maturanti/DSC_0178.JPG", text: "Lorem ipsum..." },
-  { name: "Eva Štědrá", img: "images/maturanti/DSC_0260.JPG", text: "Lorem ipsum..." },
-  { name: "David Šticha", img: "images/maturanti/DSC_0361.JPG", text: "Lorem ipsum..." },
-  { name: "Eva Šváchová", img: "images/maturanti/DSC_0213.JPG", text: "Lorem ipsum..." },
-  { name: "Daryna Toporovska", img: "images/maturanti/DSC_0128.JPG", text: "Lorem ipsum..." },
-  { name: "Vojtěch Vašmucius", img: "images/maturanti/DSC_0427.JPG", text: "Lorem ipsum..." },
-  { name: "Tobiáš Veverka", img: "images/maturanti/DSC_0287.JPG", text: "Lorem ipsum..." },
-  { name: "Jakub Vlček", img: "images/maturanti/DSC_0376.JPG", text: "Lorem ipsum..." },
-  { name: "Vaclav Vostatek", img: "images/maturanti/DSC_0241.JPG", text: "Lorem ipsum..." },
-  { name: "Daniel Zeman", img: "images/maturanti/DSC_0199.JPG", text: "Lorem ipsum..." }
+  { name: "Annie Bílá", img: "images/maturanti/DSC_0415.JPG" },
+  { name: "Daniel Bock", img: "images/maturanti/DSC_0378.JPG" },
+  { name: "Borislav Boyanov", img: "images/maturanti/DSC_0155.JPG" },
+  { name: "Martin Brunclík", img: "images/maturanti/DSC_0197.JPG" },
+  { name: "Natálie Burdová", img: "images/maturanti/DSC_0218.JPG" },
+  { name: "Gabriel Čonka", img: "images/maturanti/DSC_0115.JPG" },
+  { name: "Marat Fedorov", img: "images/maturanti/DSC_0108.JPG" },
+  { name: "Vítek Fikrle", img: "images/maturanti/DSC_0447.JPG" },
+  { name: "Ivan Gemela", img: "images/maturanti/DSC_0230.JPG" },
+  { name: "Julie Heclová", img: "images/maturanti/DSC_0263.JPG" },
+  { name: "Kristýna Herejková", img: "images/maturanti/DSC_0218.JPG" },
+  { name: "Daniel Holý", img: "images/maturanti/DSC_0180.JPG" },
+  { name: "Aneta Hřebíková", img: "images/maturanti/DSC_0245.JPG" },
+  { name: "Anna Janková", img: "images/maturanti/DSC_0153.JPG" },
+  { name: "Hana Kanalošová", img: "XXXX" },
+  { name: "Alexander Kavnjanyk", img: "images/maturanti/DSC_0272.JPG" },
+  { name: "Jan Kirpal", img: "images/maturanti/DSC_0246.JPG" },
+  { name: "Jakub Kořínský", img: "images/maturanti/DSC_0345.JPG" },
+  { name: "Daniel Koukolík", img: "images/maturanti/DSC_0236.JPG" },
+  { name: "Adam Lavrikov", img: "XXXX" },
+  { name: "David Lavička", img: "images/maturanti/DSC_0140.JPG" },
+  { name: "Aneta Mrázová", img: "XXXX" },
+  { name: "Eliška Novotná", img: "images/maturanti/DSC_0268.JPG" },
+  { name: "Nguyen Cong Tien Dung", img: "images/maturanti/DSC_0323.JPG" },
+  { name: "Nguyen Quang Truong", img: "images/maturanti/DSC_0397.JPG" },
+  { name: "Šimon Opatrný", img: "images/maturanti/DSC_0303.JPG" },
+  { name: "Linda Pfeiferová", img: "images/maturanti/DSC_0171.JPG" },
+  { name: "Veronika Pivoňková", img: "images/maturanti/DSC_0143.JPG" },
+  { name: "Adéla Prskavcová", img: "images/maturanti/DSC_0210.JPG" },
+  { name: "Barbora Sedláková", img: "images/maturanti/DSC_0163.JPG" },
+  { name: "Natálie Šedivcová", img: "images/maturanti/DSC_0296.JPG" },
+  { name: "Julie Šambergrová", img: "images/maturanti/DSC_0178.JPG" },
+  { name: "Eva Štědrá", img: "images/maturanti/DSC_0260.JPG" },
+  { name: "David Šticha", img: "images/maturanti/DSC_0361.JPG" },
+  { name: "Eva Šváchová", img: "images/maturanti/DSC_0213.JPG" },
+  { name: "Daryna Toporovska", img: "images/maturanti/DSC_0128.JPG" },
+  { name: "Vojtěch Vašmucius", img: "images/maturanti/DSC_0427.JPG" },
+  { name: "Tobiáš Veverka", img: "images/maturanti/DSC_0287.JPG" },
+  { name: "Jakub Vlček", img: "images/maturanti/DSC_0376.JPG" },
+  { name: "Vaclav Vostatek", img: "images/maturanti/DSC_0241.JPG" },
+  { name: "Daniel Zeman", img: "images/maturanti/DSC_0199.JPG" }
 ];
-
 
 let startX = 0;
 const cardsContainer = document.querySelector('.cards');
@@ -148,8 +152,6 @@ cardsContainer.addEventListener('touchend', e => {
   }
 });
 
-
-
 const container = document.getElementById("cards-container");
 
 students.forEach((student, i) => {
@@ -163,7 +165,6 @@ students.forEach((student, i) => {
       <div class="card-data">
         <span class="card-num">${i+1}/${students.length}</span>
         <h2>${student.name}</h2>
-        <p>${student.text}</p>
         <footer>
           <label for="radio-${prev+1}" aria-label="Previous">&#10094;</label>
           <label for="radio-${next+1}" aria-label="Next">&#10095;</label>
@@ -187,79 +188,69 @@ students.forEach((student, i) => {
         <h2 style="font-weight: bold;">Učitelé IT4B</h2>
         <div class="teachers-grid">
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Zedníková">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Zedníková">
             <h3>Ing. Lenka Zedníková</h3>
             <p>Třídní učitelka</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Breit">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Breit">
             <h3>Mgr. Petr Breit</h3>
             <p>Tvorba webových stránek</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Bezděka">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Bezděka">
             <h3>Mgr. Jan Bezděka, Ph.D.</h3>
             <p>Počítačové sítě</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Kovářík">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Kovářík">
             <h3>Jakub Kovářík</h3>
             <p>Algoritmizace a programování</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Kadlecová">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Kadlecová">
             <h3>Mgr. Zuzana Kadlecová</h3>
             <p>Anglický jazyk</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="">
-            <h3></h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="">
+            <h3>Mgr. Renata Hašková</h3>
             <p>Anglický jazyk</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Zedníková">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Zedníková">
             <h3>Ing. Lenka Zedníková</h3>
             <p>Aplikovaný software v praxi</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Schejbalová">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Schejbalová">
             <h3>Mgr. Veronika Schejbalová</h3>
             <p>Český jazyk a literatura</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Bláhová">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Bláhová">
             <h3>Mgr. Kateřina Bláhová</h3>
             <p>Ekonomika</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Kůsová">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Kůsová">
             <h3>Mgr. Šárka Kůsová</h3>
             <p>Matematika</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Zábrodský">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Zábrodský">
             <h3>Ing. Martin Zábrodský</h3>
             <p>Operační systémy</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Šilhánek">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Šilhánek">
             <h3>Mgr. Michal Šilhánek</h3>
             <p>Tělesná výchova</p>
           </div>
           <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Formánek">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Formánek">
             <h3>Ing. Jiří Formánek</h3>
             <p>Hardware</p>
-          </div>
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Fialová">
-            <h3>Mgr. Jana Fialová</h3>
-            <p>Německý jazyk</p>
-          </div>
-          <div class="teacher-card">
-            <img src="https://picsum.photos/id/401/200/300" alt="Unknown">
-            <h3></h3>
-            <p>Ruský jazyk</p>
           </div>
         </div>
       </div>
@@ -268,19 +259,14 @@ students.forEach((student, i) => {
     <div class="scb-content" style="display: none;">
       <div class="container">
       <h2 style="font-weight: bold;">Učitelé 4SCB</h2>
-
       <div class="teachers-grid">
-
-        <!-- Teacher 3 -->
         <div class="teacher-card">
-          <img src="https://picsum.photos/id/401/200/300" alt="Teacher 3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Teacher 3">
           <h3>PhDr. Alena Svobodová</h3>
           <p>Český jazyk</p>
         </div>
-
-        <!-- Teacher 4 -->
         <div class="teacher-card">
-          <img src="https://picsum.photos/id/401/200/300" alt="Teacher 4">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Teacher 4">
           <h3>RNDr. Karel Horák</h3>
           <p>Matematika</p>
         </div>
@@ -333,86 +319,50 @@ students.forEach((student, i) => {
     <div class="timeline">
       <div class="timeline-item left">
         <div class="content">
-          <h3>19:30</h3>
-          <p>Příchozí</p>
+          <h3>19:30-20:00</h3>
+          <p>Otevření sálu</p>
         </div>
       </div>
       <div class="timeline-item right">
         <div class="content">
           <h3>20:00–20:15</h3>
-          <p>Úvodní představení</p>
+          <p>Zahájení plesu</p>
         </div>
       </div>
       <div class="timeline-item left">
         <div class="content">
-          <h3>20:15–20:20</h3>
-          <p>Zahájení programu</p>
+          <h3>20:15–20:45</h3>
+          <p>Maturitní into a předtančení</p>
         </div>
       </div>
       <div class="timeline-item right">
         <div class="content">
-          <h3>20:20–20:45</h3>
-          <p>Nástup a tančení</p>
+          <h3>20:45–21:15</h3>
+          <p>Cheerleading a volná zábava</p>
         </div>
       </div>
       <div class="timeline-item left">
         <div class="content">
-          <h3>20:45–21:30</h3>
-          <p>Volná zábava</p>
+          <h3>21:15-23:10</h3>
+          <p>Šerpování, ceremonie a proslov</p>
         </div>
       </div>
       <div class="timeline-item right">
         <div class="content">
-          <h3>21:30–23:00</h3>
-          <p>Šerpování</p>
+          <h3>23:10-00:00</h3>
+          <p>Moderní gymnastika a volná zábava</p>
         </div>
       </div>
       <div class="timeline-item left">
         <div class="content">
-          <h3>23:00–23:10</h3>
-          <p>Proslov a poděkování učitelům</p>
+          <h3>00:00-00:50</h3>
+          <p>Půlnoční překvapení a předtančení</p>
         </div>
       </div>
       <div class="timeline-item right">
         <div class="content">
-          <h3>23:10–23:30</h3>
-          <p>Volná zábava</p>
-        </div>
-      </div>
-      <div class="timeline-item left">
-        <div class="content">
-          <h3>23:30–23:40</h3>
-          <p>Just Dance</p>
-        </div>
-      </div>
-      <div class="timeline-item right">
-        <div class="content">
-          <h3>23:40–00:00</h3>
-          <p>Volná zábava / DJ</p>
-        </div>
-      </div>
-      <div class="timeline-item left">
-        <div class="content">
-          <h3>00:00–00:20</h3>
-          <p>Půlnoční představení</p>
-        </div>
-      </div>
-      <div class="timeline-item right">
-        <div class="content">
-          <h3>00:20–00:45</h3>
-          <p>Předtaneční vol. 2</p>
-        </div>
-      </div>
-      <div class="timeline-item left">
-        <div class="content">
-          <h3>00:45–00:50</h3>
-          <p>Ukončovací video a závěr maturitního programu</p>
-        </div>
-      </div>
-      <div class="timeline-item right">
-        <div class="content">
-          <h3>00:50–02:00</h3>
-          <p>DJ dohrává</p>
+          <h3>00:50-01:30</h3>
+          <p>Ukončování plesu s DJem</p>
         </div>
       </div>
     </div>
@@ -468,35 +418,27 @@ students.forEach((student, i) => {
   <section id="tickets" class="section">
     <div class="container">
       <h2 style="font-weight: bold;">Cena lístku</h2>
-      <p class="ticket-price">Cena lístku: 300-350 Kč</p>
+      <p class="ticket-price">Cena lístku:</p>
+      <p class="ticket-price">Sezení - 350,-</p>
+      <p class="ticket-price">Stání - 300,-</p>
     </div>
   </section>
 
-  <section id="video" class="section alt">
-    <div class="container">
-      <h2>Videa z nácviku</h2>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"></iframe>
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"></iframe>
-        </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
+  <section id="contact" class="section alt">
   <div class="container">
     <h2 style="font-weight: bold; text-align:center;">Kontakt</h2>
     <div class="contact-grid">
 
       <!-- Contact Info -->
       <div class="contact-info">
-        <p style="color:#fff; font-weight:500;">Email: <a href="mailto:it4a@example.com" style="color:#fff; text-decoration:underline;">it4a@example.com</a></p>
-        <p style="color:#fff; font-weight:500;">Tel: +420 123 456 789</p>
+        <p style="color:#fff; font-weight:500;">Email: <a href="mailto:it4b4scb@gmail.com" style="color:#fff; text-decoration:underline;">it4b4scb@gmail.com</a></p>
+        <p style="color:#fff; font-weight:500;">Tel: +420 776 519 911</p>
       </div>
 
       <!-- Social Icons -->
       <div class="contact-social">
         <div class="social-icons">
-          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+          <a href="https://www.facebook.com/events/2160821791076923" target="_blank" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="https://www.instagram.com/hangover_it4b_4scb/?utm_source=ig_web_button_share_sheet" target="_blank" aria-label="Instagram">
@@ -511,7 +453,7 @@ students.forEach((student, i) => {
   <style>
 #contact {
   padding: 60px 20px;
-  background: #000;
+
 }
 
 .contact-grid {
