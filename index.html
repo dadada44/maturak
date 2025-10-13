@@ -23,15 +23,16 @@
 
   <header>
     <nav class="container nav">
-      <div class="logo">Maturitní Ples IT4B a 4SCB</div>
-
+      <div class="logo">Maturitní Ples<br>IT4B a 4SCB</div>
       <ul class="nav-links">
         <li><a href="#info">Info</a></li>
         <li><a href="#students">Maturanti</a></li>
         <li><a href="#timeline">Program</a></li>
-        <li><a href="#tickets">Lístky</a></li>
         <li><a href="#contact">Kontakt</a></li>
       </ul>
+      <button class="hamburger" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
   </header>
 
@@ -47,25 +48,40 @@
   </section>
 
   <section id="info" class="section">
-    <div class="container">
-      <h2 style="font-weight: bold;">O plese</h2>
-      <p>
-        Maturitní ples třídy IT4B a 4SCB je jedinečná událost, kde společně oslavíme
-        konec čtyřletého studia. Čeká vás slavnostní nástup maturantů,
-        předávání šerp, kulturní program a samozřejmě spousta zábavy.
-      </p>
+    <div class="container info-grid">
+      <div class="map-section">
+        <h2 style="text-align:center; margin-bottom:60px; font-weight:bold;">Kde se ples koná</h2>
+        <p style="text-align:center; margin-bottom:15px; font-weight:bold;">U Borského parku 31, Plzeň</p>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4292.415510571248!2d13.3709586!3d49.7205955!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470aee137fc8c8ab%3A0xb68ed059455373cb!2sCongress%20Center%20Parkhotel%20Plze%C5%88!5e1!3m2!1scs!2scz!4v1760045385880!5m2!1scs!2scz"
+            style="border:0; width:100%; height:400px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.15);"
+            allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+      <div class="text-section">
+        <h2 style="font-weight: bold;">O plese</h2>
+        <p>
+          Maturitní ples třídy IT4B a 4SCB je jedinečná událost, kde společně oslavíme
+          konec čtyřletého studia. Čeká vás slavnostní nástup maturantů,
+          předávání šerp, kulturní program a samozřejmě spousta zábavy.
+        </p>
+      </div>
+      <div class="tickets-section">
+        <h2 style="font-weight: bold;">Cena lístku</h2>
+        <p class="ticket-price">Cena lístku:</p>
+        <p class="ticket-price">Sezení - 350,-</p>
+        <p class="ticket-price">Stání - 300,-</p>
+      </div>
     </div>
   </section>
 
   <section id="intro" style="background: #111;" class="section intro">
     <div class="container intro-grid">
-      <div class="intro-left">
-        <h2 style="font-weight: bold;">Jsme</h2>
-      </div>
-
       <div class="intro-item">
         <h1>IT4B</h1>
-        <img src="images/DSC_0013.JPG" alt="IT4B">
+        <img src="images/DSC_0013.jpg" alt="IT4B">
         <p class="class-desc">
           SOUE – Střední odborné učiliště elektrotechnické.<br>
           IT4B je třída zaměřená na programování, sítě a moderní technologie.
@@ -74,7 +90,7 @@
 
       <div class="intro-item">
         <h1>4SCB</h1>
-        <img src="images/DSC_0063.JPG" alt="4SCB">
+        <img src="images/DSC_0063.jpg" alt="4SCB">
         <p class="class-desc">
           SPSTR – Střední průmyslová škola strojnická.<br>
           4SCB je třída technického zaměření s důrazem na praktické dovednosti.
@@ -84,109 +100,19 @@
   </section>
 
   <section id="students" class="section">
-  <div class="container">
-    <h1 style="padding-bottom: 100px; margin: 0; font-weight: bold;">Maturanti</h1>
-    <div id="cards-container" class="cards"></div>
-  </div>
-  </section>
-  <style>
-.card-img {
-  transform: rotate(-90deg);
-}
-  </style>
-  <script>
-const students = [
-  { name: "Annie Bílá", img: "images/maturanti/DSC_0415.JPG" },
-  { name: "Daniel Bock", img: "images/maturanti/DSC_0378.JPG" },
-  { name: "Borislav Boyanov", img: "images/maturanti/DSC_0155.JPG" },
-  { name: "Martin Brunclík", img: "images/maturanti/DSC_0197.JPG" },
-  { name: "Natálie Burdová", img: "images/maturanti/DSC_0218.JPG" },
-  { name: "Gabriel Čonka", img: "images/maturanti/DSC_0115.JPG" },
-  { name: "Marat Fedorov", img: "images/maturanti/DSC_0108.JPG" },
-  { name: "Vítek Fikrle", img: "images/maturanti/DSC_0447.JPG" },
-  { name: "Ivan Gemela", img: "images/maturanti/DSC_0230.JPG" },
-  { name: "Julie Heclová", img: "images/maturanti/DSC_0263.JPG" },
-  { name: "Kristýna Herejková", img: "images/maturanti/DSC_0218.JPG" },
-  { name: "Daniel Holý", img: "images/maturanti/DSC_0180.JPG" },
-  { name: "Aneta Hřebíková", img: "images/maturanti/DSC_0245.JPG" },
-  { name: "Anna Janková", img: "images/maturanti/DSC_0153.JPG" },
-  { name: "Hana Kanalošová", img: "XXXX" },
-  { name: "Alexander Kavnjanyk", img: "images/maturanti/DSC_0272.JPG" },
-  { name: "Jan Kirpal", img: "images/maturanti/DSC_0246.JPG" },
-  { name: "Jakub Kořínský", img: "images/maturanti/DSC_0345.JPG" },
-  { name: "Daniel Koukolík", img: "images/maturanti/DSC_0236.JPG" },
-  { name: "Adam Lavrikov", img: "XXXX" },
-  { name: "David Lavička", img: "images/maturanti/DSC_0140.JPG" },
-  { name: "Aneta Mrázová", img: "XXXX" },
-  { name: "Eliška Novotná", img: "images/maturanti/DSC_0268.JPG" },
-  { name: "Nguyen Cong Tien Dung", img: "images/maturanti/DSC_0323.JPG" },
-  { name: "Nguyen Quang Truong", img: "images/maturanti/DSC_0397.JPG" },
-  { name: "Šimon Opatrný", img: "images/maturanti/DSC_0303.JPG" },
-  { name: "Linda Pfeiferová", img: "images/maturanti/DSC_0171.JPG" },
-  { name: "Veronika Pivoňková", img: "images/maturanti/DSC_0143.JPG" },
-  { name: "Adéla Prskavcová", img: "images/maturanti/DSC_0210.JPG" },
-  { name: "Barbora Sedláková", img: "images/maturanti/DSC_0163.JPG" },
-  { name: "Natálie Šedivcová", img: "images/maturanti/DSC_0296.JPG" },
-  { name: "Julie Šambergrová", img: "images/maturanti/DSC_0178.JPG" },
-  { name: "Eva Štědrá", img: "images/maturanti/DSC_0260.JPG" },
-  { name: "David Šticha", img: "images/maturanti/DSC_0361.JPG" },
-  { name: "Eva Šváchová", img: "images/maturanti/DSC_0213.JPG" },
-  { name: "Daryna Toporovska", img: "images/maturanti/DSC_0128.JPG" },
-  { name: "Vojtěch Vašmucius", img: "images/maturanti/DSC_0427.JPG" },
-  { name: "Tobiáš Veverka", img: "images/maturanti/DSC_0287.JPG" },
-  { name: "Jakub Vlček", img: "images/maturanti/DSC_0376.JPG" },
-  { name: "Vaclav Vostatek", img: "images/maturanti/DSC_0241.JPG" },
-  { name: "Daniel Zeman", img: "images/maturanti/DSC_0199.JPG" }
-];
-
-let startX = 0;
-const cardsContainer = document.querySelector('.cards');
-cardsContainer.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-cardsContainer.addEventListener('touchend', e => {
-  const diff = e.changedTouches[0].clientX - startX;
-  if (Math.abs(diff) > 50) {
-    const current = document.querySelector('input[name="radio-card"]:checked');
-    const currentIndex = [...document.querySelectorAll('input[name="radio-card"]')].indexOf(current);
-    const nextIndex = (currentIndex + (diff < 0 ? 1 : -1) + students.length) % students.length;
-    document.getElementById(`radio-${nextIndex + 1}`).checked = true;
-  }
-});
-
-const container = document.getElementById("cards-container");
-
-students.forEach((student, i) => {
-  const next = (i + 1) % students.length;
-  const prev = (i - 1 + students.length) % students.length;
-  
-  container.innerHTML += `
-    <input type="radio" id="radio-${i+1}" name="radio-card" ${i===0 ? "checked" : ""}>
-    <article class="card" style="--angle:${(Math.random()*40-20).toFixed(1)}deg">
-      <img class="card-img" src="${student.img}" alt="${student.name}">
-      <div class="card-data">
-        <span class="card-num">${i+1}/${students.length}</span>
-        <h2>${student.name}</h2>
-        <footer>
-          <label for="radio-${prev+1}" aria-label="Previous">&#10094;</label>
-          <label for="radio-${next+1}" aria-label="Next">&#10095;</label>
-        </footer>
+    <div class="container">
+      <h1 style="padding-bottom: 20px; margin: 0; font-weight: bold;">Maturanti</h1>
+      <div class="class-switch">
+        <label for="class-toggle">IT4B</label>
+        <input type="checkbox" id="class-toggle">
+        <span class="switch"></span>
+        <label for="class-toggle">4SCB</label>
       </div>
-    </article>
-  `;
-});
-  </script>
-
-  <section id="teachers" class="section alt">
-    <div class="class-switch">
-      <label for="class-toggle">IT4B</label>
-      <input type="checkbox" id="class-toggle">
-      <span class="switch"></span>
-      <label for="class-toggle">4SCB</label>
-    </div>
-
-    <div class="it4b-content">
-      <div class="container">
-        <h2 style="font-weight: bold;">Učitelé IT4B</h2>
-        <div class="teachers-grid">
+      <div class="it4b-content">
+        <h2 style="font-weight: bold; margin: 20px 0;">Maturanti IT4B</h2>
+        <div id="cards-container-it4b" class="cards"></div>
+        <h2 style="font-weight: bold; margin: 20px 0;">Učitelé IT4B</h2>
+        <div class="students-teachers-grid">
           <div class="teacher-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Zedníková">
             <h3>Ing. Lenka Zedníková</h3>
@@ -254,67 +180,27 @@ students.forEach((student, i) => {
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="scb-content" style="display: none;">
-      <div class="container">
-      <h2 style="font-weight: bold;">Učitelé 4SCB</h2>
-      <div class="teachers-grid">
-        <div class="teacher-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Teacher 3">
-          <h3>PhDr. Alena Svobodová</h3>
-          <p>Český jazyk</p>
+      <div class="scb-content" style="display: none;">
+        <h2 style="font-weight: bold; margin: 20px 0;">Maturanti 4SCB</h2>
+        <div id="cards-container-scb" class="cards"></div>
+        <h2 style="font-weight: bold; margin: 20px 0;">Učitelé 4SCB</h2>
+        <div class="students-teachers-grid">
+          <div class="teacher-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Teacher 3">
+            <h3>PhDr. Alena Svobodová</h3>
+            <p>Český jazyk</p>
+          </div>
+          <div class="teacher-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Teacher 4">
+            <h3>RNDr. Karel Horák</h3>
+            <p>Matematika</p>
+          </div>
         </div>
-        <div class="teacher-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="Teacher 4">
-          <h3>RNDr. Karel Horák</h3>
-          <p>Matematika</p>
-        </div>
-
       </div>
     </div>
-    </div>
   </section>
 
-  <section id="map" class="section">
-  <div class="container">
-    <h2 style="text-align:center; margin-bottom:60px; font-weight:bold;">Kde se ples koná</h2>
-    <p style="text-align:center; margin-bottom:15px; font-weight:bold;">U Borského parku 31, Plzeň</p>
-    <div class="map-wrapper">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4292.415510571248!2d13.3709586!3d49.7205955!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470aee137fc8c8ab%3A0xb68ed059455373cb!2sCongress%20Center%20Parkhotel%20Plze%C5%88!5e1!3m2!1scs!2scz!4v1760045385880!5m2!1scs!2scz"
-        style="border:0; width:100%; height:400px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.15);"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
-    </div>
-  </div>
-  </section>
-  <style>
-#map {
-  padding: 50px 15px;
-  background: #000000;
-}
-
-.map-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgb(214, 107, 0);
-}
-
-#map h2 {
-  font-size: 2rem;
-}
-
-#map p {
-  font-size: 1rem;
-  color: #ffffff;
-}
-  </style>
-
-  <section id="timeline" class="section alt">
+  <section id="timeline" class="section">
     <h2>Časový harmonogram</h2>
     <div class="timeline">
       <div class="timeline-item left">
@@ -415,109 +301,109 @@ students.forEach((student, i) => {
     }
   </style>
 
-  <section id="tickets" class="section">
-    <div class="container">
-      <h2 style="font-weight: bold;">Cena lístku</h2>
-      <p class="ticket-price">Cena lístku:</p>
-      <p class="ticket-price">Sezení - 350,-</p>
-      <p class="ticket-price">Stání - 300,-</p>
-    </div>
-  </section>
-
   <section id="contact" class="section alt">
-  <div class="container">
-    <h2 style="font-weight: bold; text-align:center;">Kontakt</h2>
-    <div class="contact-grid">
-
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <p style="color:#fff; font-weight:500;">Email: <a href="mailto:it4b4scb@gmail.com" style="color:#fff; text-decoration:underline;">it4b4scb@gmail.com</a></p>
-        <p style="color:#fff; font-weight:500;">Tel: +420 776 519 911</p>
-      </div>
-
-      <!-- Social Icons -->
-      <div class="contact-social">
-        <div class="social-icons">
-          <a href="https://www.facebook.com/events/2160821791076923" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.instagram.com/hangover_it4b_4scb/?utm_source=ig_web_button_share_sheet" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
+    <div class="container">
+      <h2 style="font-weight: bold; text-align:center;">Kontakt</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p style="color:#fff; font-weight:500;">Email: <a href="mailto:it4b4scb@gmail.com"
+              style="color:#fff; text-decoration:underline;">it4b4scb@gmail.com</a></p>
+          <p style="color:#fff; font-weight:500;">Tel: +420 776 519 911</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/events/2160821791076923" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/hangover_it4b_4scb/?utm_source=ig_web_button_share_sheet" target="_blank"
+              aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
       </div>
-
     </div>
-  </div>
   </section>
   <style>
-#contact {
-  padding: 60px 20px;
+    #contact {
+      padding: 60px 20px;
 
-}
+    }
 
-.contact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-.contact-info p {
-  font-size: 1.1rem;
-  margin: 10px 0;
-}
+    .contact-info p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
 
-.contact-info a {
-  color: #e29402;
-  text-decoration: underline;
-}
+    .contact-info a {
+      color: #e29402;
+      text-decoration: underline;
+    }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 10px;
-}
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+    }
 
-.social-icons a {
-  display: grid;
-  place-items: center;
-  width: 70px;
-  height: 70px;
-  background: #fff;
-  color: #000;
-  border-radius: 50%;
-  font-size: 2rem;
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-}
+    .social-icons a {
+      display: grid;
+      place-items: center;
+      width: 70px;
+      height: 70px;
+      background: #fff;
+      color: #000;
+      border-radius: 50%;
+      font-size: 2rem;
+      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
 
-.social-icons a:hover {
-  transform: scale(1.2);
-  background: #d58a00;
-  color: #fff;
-}
+    .social-icons a:hover {
+      transform: scale(1.2);
+      background: #d58a00;
+      color: #fff;
+    }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .social-icons a {
-    width: 60px;
-    height: 60px;
-    font-size: 1.8rem;
-  }
-  .contact-info p {
-    font-size: 1rem;
-  }
-}
+    /* Responsive */
+    @media (max-width: 600px) {
+      .social-icons a {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+      }
+
+      .contact-info p {
+        font-size: 1rem;
+      }
+    }
   </style>
 
   <footer>
-    <p style="font-weight: bold;">© 2025 Maturitní Ples IT4B / 4SCB</p>
+    <div class="container footer-container">
+      <a href="https://www.souepl.cz/" target="_blank" class="school-logo">
+        <img src="images/souepl_logo.png" alt="SOUEPL Logo">
+      </a>
+      <p style="font-weight: bold;">© 2025 Maturitní Ples IT4B / 4SCB</p>
+      <a href="https://www.spstrplz.cz/" target="_blank" class="school-logo">
+        <img src="images/spstrplz_logo.png" alt="SPSTRPLZ Logo">
+      </a>
+    </div>
   </footer>
+
+  <div id="fullscreen-modal" class="fullscreen-modal" style="display: none;">
+    <span class="close-modal">&times;</span>
+    <img id="fullscreen-img" class="fullscreen-img" src="" alt="Fullscreen Image" loading="lazy">
+  </div>
 </body>
 
 </html>
