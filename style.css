@@ -1004,8 +1004,8 @@ footer {
 }
 
 /* Specific styles for class images in fullscreen */
-.fullscreen-img[src*="DSC_0013.JPG"],
-.fullscreen-img[src*="DSC_0063.JPG"] {
+.fullscreen-img[src*="DSC_0013.jpg"],
+.fullscreen-img[src*="DSC_0063.jpg"] {
   width: 80%;
   height: 80%;
   object-fit: cover;
@@ -1016,8 +1016,8 @@ footer {
 /* Rotate class images 90 degrees on mobile in fullscreen */
 @media (max-width: 600px) {
 
-  .fullscreen-img[src*="DSC_0013.JPG"],
-  .fullscreen-img[src*="DSC_0063.JPG"] {
+  .fullscreen-img[src*="DSC_0013.jpg"],
+  .fullscreen-img[src*="DSC_0063.jpg"] {
     transform: rotate(90deg);
     width: 100vh;
     height: 100vw;
