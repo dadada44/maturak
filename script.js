@@ -185,7 +185,7 @@ function renderCards(containerId, list) {
     container.innerHTML += `
       <input type="radio" id="radio-${containerId}-${i + 1}" name="radio-card-${containerId}" ${i === 0 ? "checked" : ""}>
       <article class="card" style="--angle:${(Math.random() * 40 - 20).toFixed(1)}deg">
-        <img class="card-img" src="${item.img}" alt="${item.name}">
+        <img class="card-img" src="${item.img}" alt="${item.name}" loading="lazy">
         <div class="card-data">
           <span class="card-num">${i + 1}/${list.length}</span>
           <h2>${item.name}</h2>
@@ -207,7 +207,7 @@ function renderTeacherCards(containerId, list) {
   list.forEach(item => {
     container.innerHTML += `
       <div class="teacher-card">
-        <img src="${item.img}" alt="${item.alt}">
+        <img src="${item.img}" alt="${item.alt}" loading="lazy">
         <h3>${item.name}</h3>
         <p>${item.subject}</p>
       </div>
