@@ -98,16 +98,16 @@ document.addEventListener("DOMContentLoaded", () => {
 const IT4Bstudents = [
   { name: "Daniel Bock", img: "images/DSC_0378.jpg", text: "Danovo nejoblíbenější aktivita je spánek. Rád si zahraje s kámošema videohry. Radši tráví čas doma než venku. Poslouchá muziku 24/7." },
   { name: "Borislav Boyanov", img: "images/DSC_0155.jpg", text: "Borislav rád sází, zbožňuje hrát a koukat na sporty. Miluje řídit auta. Nonstop pracuje a baví ho vydělávat peníze." },
-  { name: "Martin Brunclík", img: "images/DSC_0197.jpg", text: "Jeho vevodská výsost Martin Brunclík brunšvický, veleprogramátor plzeňský a arcisysadmin třemošenský jest člověk srdečně zapálený technokrat se sklony k (často) nežádoucímu šíření zbytečných informací a faktoidů. Možno též říci: celkem fajn člověk." },
+  { name: "Martin Brunclík", img: "images/DSC_0197.jpg", text: "Jeho vévodská výsost Martin Brunclík brunšvický, veleprogramátor plzeňský a Arcisíťař třemošenský jest člověk srdečně zapálený technokrat se sklony k (často) nežádoucímu šíření zbytečných informací a faktoidů. Možno též říci: celkem fajn člověk." },
   { name: "Gabriel Čonka", img: "images/DSC_0115.jpg", text: "Gabriel je kamarádský, sympatický a hodně milý hoch. Gabriel se rád prochází a potkáva nové lidi. Má hrozně specifický smysl pro humor." },
-  { name: "Roman Damianenko", img: "images/DSC_0106.jpg", text: "Roman je docela slušný a klidný kluk. Ve volném čase rád poslouchá různou hudbu. Taky si občas rád trošku zacvičí." },
+  { name: "Roman Demianenko", img: "images/DSC_0106.jpg", text: "Roman je docela slušný a klidný kluk. Ve volném čase rád poslouchá různou hudbu. Taky si občas rád trošku zacvičí." },
   { name: "Marat Fedorov", img: "images/DSC_0108.jpg", text: "Marat Fedorov má rád vytváření webových stránek. Většinu času dělá na své maturitní stránce nebo je se svojí polovičkou. A jako každý nesnáší pondělní rána." },
   { name: "Vítek Fikrle", img: "images/DSC_0447.jpg", text: "Vítek je kluk, který tráví nezdravé množství času (a peněz) hraním videoher. Je blázen do technologie, volný čas tráví sledováním novinek a sestavou nebo konfigurací počítačů." },
-  { name: "Ivan Gemela", img: "images/DSC_0230.jpg", text: "Sundal by z ulice každou kameru. Přál by si aby lidi víc mysleli a míň mluvili. Co je nahoře domovní bratře? No tak baby nestyď se ukaž mu tu žábu." },
+  { name: "Ivan Gemeľa", img: "images/DSC_0230.jpg", text: "Sundal by z ulice každou kameru. Přál by si aby lidi víc mysleli a míň mluvili. Co je nahoře domovní bratře? No tak baby nestyď se ukaž mu tu žábu." },
   { name: "Daniel Holý", img: "images/DSC_0180.jpg", text: "Dan je profesionální prokrastinátor, bez jediný motivace k dokončení studia." },
   { name: "Alexander Kavnjanyk", img: "images/DSC_0272.jpg", text: "Saša je fajnšmekr piva. Jeho nejoblíbenější aktivita je grilování. Má rád sekanou. Nejradši tráví čas s kamarády a spolužáky." },
-  { name: "Jan Kirpal", img: "images/DSC_0246.jpg", text: "Honza je sleeperbuild master. Vůbec se nezdá ale svali má. Dokáže zaspat i na akci v 17:00. Má neprůstřelné argumenty a vždy má pravdu." },
-  { name: "Jakub Kořínský", img: "images/DSC_0345.jpg", text: "Jeho hraběcí excelence Jakub Kořínský z Kohořína jest poněkud zamlklý intelektuál se zálibami v mnoha oblastech. Rád poslouchá vážnou hudbu a nepohrdne ani historickými, politickými či matematickými fakty. Pohrda menšinami a lidskou spodinou." },
+  { name: "Jan Kirpal", img: "images/DSC_0246.jpg", text: "Honza je sleeperbuild master. Vůbec se nezdá ale svaly má. Dokáže zaspat i na akci v 17:00. Má neprůstřelné argumenty a vždy má pravdu." },
+  { name: "Jakub Kořínský", img: "images/DSC_0345.jpg", text: "Jeho hraběcí excelence Jakub Kořínský z Kokořína jest poněkud zamlklý intelektuál se zálibami v mnoha oblastech. Rád poslouchá vážnou hudbu a nepohrdne ani historickými, politickými či matematickými fakty. Pohrda menšinami a lidskou spodinou." },
   { name: "Daniel Koukolík", img: "images/DSC_0236.jpg", text: "Daniel je profesionální uživatel tabáku. Jeho hlavní zálibou posilování. Má větší bicák než ty hlavu. Je také hodný a zdvořilý. Rád papá hodně jídla." },
   { name: "David Lavička", img: "images/DSC_0140.jpg", text: "David má v oblibě auta, líbi se mu zejména jejich design. Kromě toho rád sportuje, přičemž jeho nejoblíbenějším sportem je fotbal. Ve svém volném čase ho baví sledovat různe filmy nebo seriály." },
   { name: "Adam Lavrikov", img: "images/DSC_0453.jpg", text: "Adam vás překvapí svou energii a pracovitostí. Nejvíce ho baví tvorba nových projektu, plánovat a organizovat akce, při kterých dokáže skloubit hudbu, zábavu a zároveň práci. Je workoholick a všechno se snaží mít takzvaně 'ŤIP-ŤOP'." },
@@ -118,7 +118,7 @@ const IT4Bstudents = [
   { name: "Vojtěch Vašmucius", img: "images/DSC_0427.jpg", text: "Rád si dá šlofíka kdykoliv kdy může. Velmi rád si zapálí a popije. Rád si zahraje s kamarády videohry." },
   { name: "Tobiáš Veverka", img: "images/DSC_0287.jpg", text: "Tobiáš rád poslouchá tvrdou muziku jako Korn, Ill Niño nebo Slipknot. Miluje hraní her (je to jeho závislost). Umí si udělat ze všeho srandu (doslova ze všeho)." },
   { name: "Jakub Vlček", img: "images/DSC_0376.jpg", text: "Jakub rád cestuje a užívá si procházky přírodou. Rád se opije ale vždy jen s Mírou (jeho táta). Nikdo ho v životě neviděl nosit brýle." },
-  { name: "Vaclav Vostatek", img: "images/DSC_0241.jpg", text: "Vašek je cigán prej ale jenom z 1/4 (jedný čtvrtiny) takže gádžovskéj gen převláda. (HEHE). Není mu zima, je zloba, je stále dole. Miluje pouličné kurvy, vočúvaj ho more." },
+  { name: "Václav Vostatek", img: "images/DSC_0241.jpg", text: "Vašek je cigán prej ale jenom z 1/4 (jedný čtvrtiny) takže gádžovskéj gen převláda. (HEHE). Není mu zima, je zloba, je stále dole. Miluje pouličné kurvy, vočúvaj ho more." },
   { name: "Daniel Zeman", img: "images/DSC_0199.jpg", text: "Velice rád dělá co nejmíň aktivit co může. K tomu jeho spánkový režim je velice rozbitý. A jeho oblíbená aktivita je hrát videohry." }
 ];
 
