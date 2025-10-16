@@ -203,16 +203,28 @@ function renderCards(containerId, list) {
 // Function to render teacher cards in grid
 function renderTeacherCards(containerId, list) {
   const container = document.getElementById(containerId);
-  container.innerHTML = '';
-  list.forEach(item => {
-    container.innerHTML += `
-      <div class="teacher-card">
-        <img src="${item.img}" alt="${item.alt}" loading="lazy">
-        <h3>${item.name}</h3>
-        <p>${item.subject}</p>
-      </div>
-    `;
+  container.innerHTML = ''; // Clear container initially
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Render cards when container is near viewport
+        list.forEach(item => {
+          container.innerHTML += `
+            <div class="teacher-card">
+              <img src="${item.img}" alt="${item.alt}" loading="lazy">
+              <h3>${item.name}</h3>
+              <p>${item.subject}</p>
+            </div>
+          `;
+        });
+        obs.unobserve(entry.target); // Stop observing once rendered
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '100px' // Trigger 100px before container enters viewport
   });
+  observer.observe(container); // Start observing the container
 }
 
 // Render cards for students and teachers
