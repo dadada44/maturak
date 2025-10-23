@@ -68,20 +68,66 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModal = document.querySelector(".close-modal");
   const images = document.querySelectorAll(".card-img, .intro-item img");
 
+  // Open modal with preview → full-res swap
   images.forEach(img => {
     img.addEventListener("click", () => {
+      const fullSrc = img.dataset.full || img.src;
+
+      // Show preview immediately
       fullscreenImg.src = img.src;
+      fullscreenImg.classList.remove('loaded'); // for blur-up
       modal.style.display = "flex";
+
+      // Load full-res in background
+      const fullImg = new Image();
+      fullImg.onload = () => {
+        fullscreenImg.src = fullSrc;
+        fullscreenImg.classList.add('loaded'); // trigger blur-up
+      };
+      fullImg.src = fullSrc;
     });
   });
 
-  closeModal.onclick = () => { modal.style.display = "none"; fullscreenImg.src = ""; };
-  modal.onclick = (e) => { if (e.target === modal) { modal.style.display = "none"; fullscreenImg.src = ""; } };
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.style.display === "flex") {
-      modal.style.display = "none"; fullscreenImg.src = "";
+  // Close modal: X button
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+    fullscreenImg.src = "";
+    fullscreenImg.classList.remove('loaded');
+  });
+
+  // Close modal: Click outside image
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      fullscreenImg.src = "";
+      fullscreenImg.classList.remove('loaded');
     }
   });
+
+  // Close modal: Press Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.style.display === "flex") {
+      modal.style.display = "none";
+      fullscreenImg.src = "";
+      fullscreenImg.classList.remove('loaded');
+    }
+  });
+
+  // Close on swipe down (mobile)
+  let touchStartY = 0;
+  modal.addEventListener('touchstart', e => touchStartY = e.touches[0].clientY);
+  modal.addEventListener('touchmove', e => {
+    const diff = e.touches[0].clientY - touchStartY;
+    if (diff > 100) {
+      modal.style.display = "none";
+      fullscreenImg.src = "";
+    }
+  });
+
+  fullImg.onload = () => {
+    fullscreenImg.src = fullSrc;
+    fullscreenImg.classList.add('loaded');
+  };
 
   // Hamburger menu
   const hamburger = document.querySelector(".hamburger");
@@ -89,3 +135,4 @@ document.addEventListener("DOMContentLoaded", () => {
   hamburger.addEventListener("click", () => navLinks.classList.toggle("active"));
   navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navLinks.classList.remove("active")));
 });
+
