@@ -73,15 +73,12 @@ h3,
 }
 
 @media (max-width: 768px) {
-
   h1,
   h2,
   h3,
   .bold {
     font-weight: 800;
-    /* extra bold */
     letter-spacing: -0.3px;
-    /* opticky pěknější */
   }
 }
 
@@ -94,6 +91,7 @@ body {
   display: grid;
   margin: 0;
   font: 1rem system-ui;
+  background: #000;
 }
 
 /* Container */
@@ -103,12 +101,161 @@ body {
   padding: 0 20px;
 }
 
-/* Navbar / Glass Header */
+/* === NAV + HAMBURGER – JEDNOTNÝ GLASS STYL === */
 header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 20px 20px;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffb347;
+}
+
+/* === HAMBURGER – STEJNÝ STYL JAKO NAV === */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  z-index: 1002;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.hamburger.is-active {
+  background: rgba(255, 183, 71, 0.2);
+  transform: rotate(90deg);
+}
+
+.hamburger i {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.25s ease, transform 0.3s ease;
+  font-size: 1.4rem;
+}
+
+.hamburger .fa-xmark {
+  opacity: 0;
+  transform: scale(0.7) rotate(-90deg);
+}
+
+.hamburger.is-active .fa-bars {
+  opacity: 0;
+  transform: scale(0.7) rotate(90deg);
+}
+
+.hamburger.is-active .fa-xmark {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* === MOBILNÍ VERZE === */
+@media (max-width: 768px) {
+  .nav {
+    height: auto;
+    padding: 15px 20px;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px 0;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 0 0 16px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    margin: 12px 0;
+    text-align: center;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 8px 0;
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
 
 img {
@@ -170,10 +317,11 @@ input[type="radio"] {
   overflow: hidden;
   transform-origin: center;
   object-fit: cover;
-  box-shadow: 0 0 5px 3px rgba(0 0 0 / .05);
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, .05);
   cursor: pointer;
 }
 
+/* Animace obrázků */
 input:nth-of-type(1):checked+.card~.card>.card-img {
   animation: straighten-img-1 calc(var(--duration) * 2) forwards;
   animation-timing-function: var(--img-easing);
@@ -215,50 +363,19 @@ input:nth-of-type(7):checked+.card~.card>.card-img {
   animation-timing-function: var(--img-easing);
 }
 
-/* as CSS can't remove animations, we change the animation according to which checkbox is checked - all animations are the same (would be simpler with SCSS) */
-@keyframes straighten-img-1 {
+@keyframes straighten-img-1,
+straighten-img-2,
+straighten-img-3,
+straighten-img-4,
+straighten-img-5,
+straighten-img-6,
+straighten-img-7 {
   50% {
     --angle: 0deg;
   }
 }
 
-@keyframes straighten-img-2 {
-  50% {
-    --angle: 0deg;
-  }
-}
-
-@keyframes straighten-img-3 {
-  50% {
-    --angle: 0deg;
-  }
-}
-
-@keyframes straighten-img-4 {
-  50% {
-    --angle: 0deg;
-  }
-}
-
-@keyframes straighten-img-5 {
-  50% {
-    --angle: 0deg;
-  }
-}
-
-@keyframes straighten-img-6 {
-  50% {
-    --angle: 0deg;
-  }
-}
-
-@keyframes straighten-img-7 {
-  50% {
-    --angle: 0deg;
-  }
-}
-
-/* stacking order - these are updated according to which card is selected */
+/* Z-index stacking */
 .card {
   z-index: -1;
 }
@@ -267,37 +384,30 @@ input:checked+.card {
   z-index: 10 !important;
 }
 
-/* next card checked - place behind */
 .card:has(+input:checked) {
   z-index: 9;
 }
 
-/* next card +1 checked - place behind */
 .card:has(+input + .card + input:checked) {
   z-index: 8;
 }
 
-/* next card +2 checked - place behind */
 .card:has(+input + .card +input + .card + input:checked) {
   z-index: 7;
 }
 
-/* next card +3 checked - place behind */
 .card:has(+input + .card +input + .card +input + .card + input:checked) {
   z-index: 6;
 }
 
-/* next card +4 checked - place behind */
 .card:has(+input + .card +input + .card +input + .card +input + .card + input:checked) {
   z-index: 5;
 }
 
-/* next card +5 checked - place behind */
 .card:has(+input + .card +input + .card +input +input + .card +input + .card +input + .card + input:checked) {
   z-index: 4;
 }
 
-/* next card +6 checked - place behind */
 .card:has(+input + .card +input + .card +input + .card +input +input + .card +input + .card +input + .card + input:checked) {
   z-index: 3;
 }
@@ -375,80 +485,6 @@ input:checked+.card>.card-img {
   }
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  padding: 0 30px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0 0 20px 20px;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-  justify-content: center;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #ffb347;
-}
-
-@media (max-width: 768px) {
-  .nav {
-    height: auto;
-    padding: 15px;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
-    font-size: 1.2rem;
-    line-height: 1.2;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 20px 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
 /* Hero Section */
 .hero {
   height: 100vh;
@@ -500,163 +536,7 @@ ul {
 }
 
 /* Intro */
-.intro-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.intro-item h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
 .intro-item img {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-
-.event {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 10px 15px;
-  border-radius: 10px;
-}
-
-.ticket-price {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #ffb347;
-}
-
-/* Program */
-.program-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-}
-
-.program-card {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.program-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Contact */
-.contact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contact-info p {
-  font-size: 1.1rem;
-  margin: 10px 0;
-}
-
-.contact-info a {
-  color: #e29402;
-  text-decoration: underline;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.social-icons a {
-  display: grid;
-  place-items: center;
-  width: 70px;
-  height: 70px;
-  background: #fff;
-  color: #000;
-  border-radius: 50%;
-  font-size: 2rem;
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover {
-  transform: scale(1.2);
-  background: #d58a00;
-  color: #fff;
-}
-
-.school-logo img {
-  max-width: 150px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.school-logo:hover img {
-  transform: scale(1.1);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .contact-grid {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .social-icons a {
-    width: 60px;
-    height: 60px;
-    font-size: 1.8rem;
-  }
-
-  .contact-info p {
-    font-size: 1rem;
-  }
-
-  .school-logo img {
-    max-width: 120px;
-  }
-}
-
-/* Teachers */
-.teachers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.teacher-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.teacher-card img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -761,8 +641,6 @@ footer {
   }
 }
 
-
-
 /* Fade-in animation */
 .fade-in {
   opacity: 0;
@@ -790,7 +668,6 @@ footer {
   margin: 40px auto;
 }
 
-/* Timeline Dots */
 .timeline::after {
   content: '';
   position: absolute;
@@ -1022,9 +899,7 @@ footer {
   max-height: none;
 }
 
-/* Rotate class images 90 degrees on mobile in fullscreen */
 @media (max-width: 600px) {
-
   .fullscreen-img[src*="DSC_0013.jpg"],
   .fullscreen-img[src*="DSC_0063.jpg"] {
     transform: rotate(90deg);
@@ -1042,65 +917,15 @@ footer {
   color: white;
   cursor: pointer;
   transition: color 0.3s ease;
-  z-index: 2100; /* Above modal */
-  pointer-events: all !important; /* Critical */
+  z-index: 2100;
+  pointer-events: all !important;
 }
 
 .close-modal:hover {
   color: #ffb347;
 }
 
-/* Hamburger menu */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .nav {
-    height: auto;
-    padding: 15px;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-  .logo {
-    font-size: 1.2rem;
-    line-height: 1.2;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 20px 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
-/* ==================== PROGRAM GRID ==================== */
+/* Program Grid */
 .program-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1119,7 +944,6 @@ footer {
   transform: translateY(-5px);
 }
 
-/* --- MOBILE/TABLET --- */
 @media (max-width: 1024px) {
   .program-grid {
     max-height: 400px;
@@ -1135,7 +959,6 @@ footer {
   }
 }
 
-/* --- DESKTOP --- */
 @media (min-width: 1025px) {
   .program-grid {
     max-height: none !important;
@@ -1147,7 +970,7 @@ footer {
   }
 }
 
-/* ==================== CONTACT SECTION ==================== */
+/* Contact Section */
 #contact {
   padding: 60px 20px;
 }
@@ -1208,7 +1031,6 @@ footer {
   color: #fff;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .social-icons a {
     width: 60px;
@@ -1225,7 +1047,7 @@ footer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -1240,8 +1062,13 @@ footer {
 }
 
 .carousel-arrow:hover {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
 }
 
-.carousel-arrow.left  { left: 10px; }
-.carousel-arrow.right { right: 10px; }
+.carousel-arrow.left {
+  left: 10px;
+}
+
+.carousel-arrow.right {
+  right: 10px;
+}

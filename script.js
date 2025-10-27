@@ -7,8 +7,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Fade-in on scroll
+// Hlavní kód – spustí se po načtení DOMu
 document.addEventListener("DOMContentLoaded", () => {
+  // Fade-in on scroll
   const faders = document.querySelectorAll(".fade-in");
   const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
   const appearOnScroll = new IntersectionObserver((entries) => {
@@ -19,15 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, appearOptions);
   faders.forEach(fader => appearOnScroll.observe(fader));
-});
 
-// Swipe support
-document.addEventListener("DOMContentLoaded", () => {
+  // Swipe support
   const containers = [
     { id: "cards-container-it4b", name: "radio-card-it4b" },
     { id: "cards-container-scb", name: "radio-card-scb" }
   ];
-
   containers.forEach(({ id, name }) => {
     const container = document.getElementById(id);
     if (!container) return;
@@ -68,71 +66,87 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModal = document.querySelector(".close-modal");
   const images = document.querySelectorAll(".card-img, .intro-item img");
 
-  // Open modal with preview → full-res swap
-  images.forEach(img => {
-    img.addEventListener("click", () => {
-      const fullSrc = img.dataset.full || img.src;
-
-      // Show preview immediately
-      fullscreenImg.src = img.src;
-      fullscreenImg.classList.remove('loaded'); // for blur-up
-      modal.style.display = "flex";
-
-      // Load full-res in background
-      const fullImg = new Image();
-      fullImg.onload = () => {
-        fullscreenImg.src = fullSrc;
-        fullscreenImg.classList.add('loaded'); // trigger blur-up
-      };
-      fullImg.src = fullSrc;
+  if (modal && fullscreenImg && closeModal) {
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        const fullSrc = img.dataset.full || img.src;
+        fullscreenImg.src = img.src;
+        fullscreenImg.classList.remove('loaded');
+        modal.style.display = "flex";
+        const fullImg = new Image();
+        fullImg.onload = () => {
+          fullscreenImg.src = fullSrc;
+          fullscreenImg.classList.add('loaded');
+        };
+        fullImg.src = fullSrc;
+      });
     });
-  });
 
-  // Close modal: X button
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-    fullscreenImg.src = "";
-    fullscreenImg.classList.remove('loaded');
-  });
-
-  // Close modal: Click outside image
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
+    closeModal.addEventListener("click", () => {
       modal.style.display = "none";
       fullscreenImg.src = "";
       fullscreenImg.classList.remove('loaded');
-    }
-  });
+    });
 
-  // Close modal: Press Escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.style.display === "flex") {
-      modal.style.display = "none";
-      fullscreenImg.src = "";
-      fullscreenImg.classList.remove('loaded');
-    }
-  });
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        fullscreenImg.src = "";
+        fullscreenImg.classList.remove('loaded');
+      }
+    });
 
-  // Close on swipe down (mobile)
-  let touchStartY = 0;
-  modal.addEventListener('touchstart', e => touchStartY = e.touches[0].clientY);
-  modal.addEventListener('touchmove', e => {
-    const diff = e.touches[0].clientY - touchStartY;
-    if (diff > 100) {
-      modal.style.display = "none";
-      fullscreenImg.src = "";
-    }
-  });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.style.display === "flex") {
+        modal.style.display = "none";
+        fullscreenImg.src = "";
+        fullscreenImg.classList.remove('loaded');
+      }
+    });
 
-  fullImg.onload = () => {
-    fullscreenImg.src = fullSrc;
-    fullscreenImg.classList.add('loaded');
-  };
+    let touchStartY = 0;
+    modal.addEventListener('touchstart', e => touchStartY = e.touches[0].clientY);
+    modal.addEventListener('touchmove', e => {
+      const diff = e.touches[0].clientY - touchStartY;
+      if (diff > 100) {
+        modal.style.display = "none";
+        fullscreenImg.src = "";
+      }
+    });
+  }
 
   // Hamburger menu
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
-  hamburger.addEventListener("click", () => navLinks.classList.toggle("active"));
-  navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navLinks.classList.remove("active")));
-});
 
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("is-active");
+
+      const icon = hamburger.querySelector('i');
+      if (icon) {
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        } else {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
+    });
+
+    // Zavření po kliku na odkaz
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("is-active");
+        const icon = hamburger.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      });
+    });
+  }
+});
