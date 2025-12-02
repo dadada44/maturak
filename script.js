@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("fullscreen-modal");
   const fullscreenImg = document.getElementById("fullscreen-img");
   const closeModal = document.querySelector(".close-modal");
-  const images = document.querySelectorAll(".card-img, .intro-item img");
+  const images = document.querySelectorAll(".card-img, .intro-item img, img[data-full]");
 
   if (modal && fullscreenImg && closeModal) {
     images.forEach(img => {
